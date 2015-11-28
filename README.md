@@ -3,7 +3,7 @@ Uses the structure.u8.rdf and content.u8.rdf files from <http://rdf.dmoz.org>
 as input, and writes them into a MySQL and as Turtle TTL files
 
 
-= dmoz2mysql =
+=== dmoz2mysql ===
 
 PHP commandline scripts to convert dmoz RDF to import into MySQL database
 
@@ -22,7 +22,7 @@ Then call on commandline: php start_script.php
 It's a PHP console script, not a PHP web page application.
 
 
-= mysql2ttl =
+=== mysql2ttl ===
 
 Python scripts by Ben Bucksch to read from MySQL and export to a Turtle ttl triple file
 
@@ -43,12 +43,13 @@ Future:
 - Until then, I hope this converter might be useful for somebody.
 
 
-= File sizes =
+=== File sizes ===
 
 rdf.dmoz.org download files:
 *  85M  structure.rdf.u8.gz
 * 247M  content.rdf.u8.gz
 * 331M  total
+
 extracted:
 * 886M  structure.rdf
 * 1.7G  content.rdf.u8.gz
@@ -60,6 +61,7 @@ converter output:
 *  36M  links.ttl.gz
 * 207M  link-titles.ttl.gz
 * 290M  total
+
 extracted:
 * 175M  categories.ttl
 * 592M  category-hierarchy.ttl
