@@ -1,2 +1,4 @@
 lastupdate.data
 *~
+*.pyc
+*.sh
