@@ -94,6 +94,7 @@ class Basic {
 		}
 		
 		//If it set to true, set some breaks
+		$break = "";
 		if($__line_wrap) {
 			$break = "\n";
 		}
@@ -163,7 +164,7 @@ class Database {
 		$do_query = mysql_query($__query);
 		
 		if(!$do_query) {
-			Basic::error('Fatal error', "Could not do the following query: $query");
+			Basic::error('Fatal error', "Could not do the following query: $__query");
 		}
 		
 	}

@@ -39,8 +39,8 @@ $query = "CREATE TABLE content_description (
   description text NOT NULL,
   ages varchar(100) NOT NULL default '',
   mediadate date NOT NULL default '0000-00-00',
-  priority tinyint(2) NOT NULL default '0'
-) TYPE=MyISAM;\n";
+  priority tinyint(2) NOT NULL default 0
+);\n";
 Database::sqlWithoutAnswer($query); //Create :)
 
 //Create content_links table
@@ -50,7 +50,7 @@ $query = "CREATE TABLE content_links (
   type varchar(20) NOT NULL default '',
   resource text NOT NULL,
   KEY catid (catid)
-) TYPE=MyISAM;\n";
+);\n";
 Database::sqlWithoutAnswer($query); //Create :)
 
 //Create structure table
@@ -61,7 +61,7 @@ $query = "CREATE TABLE structure (
   description text NOT NULL default '',
   lastupdate datetime NOT NULL default '0000-00-00 00:00:00',
   KEY catid (catid)
-) TYPE=MyISAM;\n";
+);\n";
 Database::sqlWithoutAnswer($query); //Create :)
 
 //Create datatypes table
@@ -70,7 +70,7 @@ $query = "CREATE TABLE datatypes (
   type varchar(20) NOT NULL default '',
   resource text NOT NULL,
   KEY catid (catid)
-) TYPE=MyISAM;\n";
+);\n";
 Database::sqlWithoutAnswer($query); //Create :)
 
 Basic::printToConsole("\nTables in the database (" . DB_DATABASE . ") are successfully created!\n");
