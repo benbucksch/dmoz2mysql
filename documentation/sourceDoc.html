@@ -1,0 +1,1051 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="stylesheet" href="./sourceDoc.css" type="text/css">
+<title>./sourceDoc</title>
+<!-- Source: ./../ -->
+<!-- Generated with ROBODoc Version 4.0.25 (May 16 2004) -->
+<!-- ROBODoc (c) 1994-2004 by Frans Slothouber and Jacco van Weert. -->
+</head>
+<body>
+
+<h3 align="center">TABLE OF CONTENTS</h3>
+<ul>
+<li id="title">Clean file Classes</li>
+<li>1.   <a href="#robo0">Introduction/class_clean.php</a></li>
+<li>1.1.   <a href="#robo16">class_clean.php/CleanXML</a></li>
+<li>1.1.1.   <a href="#robo25">CleanXML/_correction</a></li>
+<li>1.1.2.   <a href="#robo26">CleanXML/_writeTheCleanData</a></li>
+<li>1.1.3.   <a href="#robo27">CleanXML/cleanFile</a></li>
+
+<li id="title">Command Classes</li>
+<li>2.   <a href="#robo1">Introduction/class_command.php</a></li>
+<li>2.1.   <a href="#robo17">class_command.php/Basic</a></li>
+<li>2.1.1.   <a href="#robo8">Basic/error</a></li>
+<li>2.1.2.   <a href="#robo9">Basic/printToConsole</a></li>
+<li>2.2.   <a href="#robo18">class_command.php/CheckURL</a></li>
+<li>2.2.1.   <a href="#robo10">CheckURL/_urlParse</a></li>
+<li>2.2.2.   <a href="#robo11">CheckURL/contentLenght</a></li>
+<li>2.2.3.   <a href="#robo12">CheckURL/downloadHeaders</a></li>
+<li>2.2.4.   <a href="#robo13">CheckURL/lastModified</a></li>
+<li>2.2.5.   <a href="#robo14">CheckURL/lastModifiedCompare</a></li>
+<li>2.2.6.   <a href="#robo15">CheckURL/writeLastUpdate</a></li>
+<li>2.3.   <a href="#robo19">class_command.php/Database</a></li>
+<li>2.3.1.   <a href="#robo37">Database/close</a></li>
+<li>2.3.2.   <a href="#robo38">Database/connect</a></li>
+<li>2.3.3.   <a href="#robo39">Database/sqlWithoutAnser</a></li>
+<li>2.4.   <a href="#robo20">class_command.php/Dot</a></li>
+<li>2.4.1.   <a href="#robo40">Dot/printDot</a></li>
+<li>2.4.2.   <a href="#robo41">Dot/setFrequency</a></li>
+
+<li id="title">Download Classes</li>
+<li>3.   <a href="#robo2">Introduction/class_download.php</a></li>
+<li>3.1.   <a href="#robo21">class_download.php/DownloadExtractFile</a></li>
+<li>3.1.1.   <a href="#robo42">DownloadExtractFile/delete</a></li>
+<li>3.1.2.   <a href="#robo43">DownloadExtractFile/download</a></li>
+<li>3.1.3.   <a href="#robo44">DownloadExtractFile/extract</a></li>
+<li>3.1.4.   <a href="#robo45">DownloadExtractFile/setDownloadSpeed</a></li>
+<li>3.1.5.   <a href="#robo46">DownloadExtractFile/setFilename</a></li>
+<li>3.1.6.   <a href="#robo47">DownloadExtractFile/setPath</a></li>
+
+<li id="title">Parse Classes</li>
+<li>4.   <a href="#robo3">Introduction/class_parse.php</a></li>
+<li>4.1.   <a href="#robo22">class_parse.php/ParseXMLContent</a></li>
+<li>4.1.1.   <a href="#robo50">ParseXMLContent/_charDataProcessor</a></li>
+<li>4.1.2.   <a href="#robo51">ParseXMLContent/_endTagProcessor</a></li>
+<li>4.1.3.   <a href="#robo52">ParseXMLContent/_startTagProcessor</a></li>
+<li>4.1.4.   <a href="#robo53">ParseXMLContent/startParse</a></li>
+<li>4.2.   <a href="#robo23">class_parse.php/ParseXMLStructure</a></li>
+<li>4.2.1.   <a href="#robo54">ParseXMLStructure/_charDataProcessor</a></li>
+<li>4.2.2.   <a href="#robo55">ParseXMLStructure/_endTagProcessor</a></li>
+<li>4.2.3.   <a href="#robo56">ParseXMLStructure/_startTagProcessor</a></li>
+<li>4.2.4.   <a href="#robo57">ParseXMLStructure/startParse</a></li>
+<li>4.3.   <a href="#robo24">class_parse.php/XMLGlobal</a></li>
+<li>4.3.1.   <a href="#robo67">XMLGlobal/_echoStatus</a></li>
+<li>4.3.2.   <a href="#robo68">XMLGlobal/_getMicroTime</a></li>
+<li>4.3.3.   <a href="#robo69">XMLGlobal/_splitTime</a></li>
+<li>4.3.4.   <a href="#robo70">XMLGlobal/_startToParse</a></li>
+<li>4.3.5.   <a href="#robo71">XMLGlobal/setStartTime</a></li>
+<li>4.3.6.   <a href="#robo72">XMLGlobal/setXMLFile</a></li>
+
+<li id="title">Config file</li>
+<li>5.   <a href="#robo4">Introduction/config.php</a></li>
+<li>5.1.   <a href="#robo28">config.php/Common_global_values</a></li>
+<li>5.2.   <a href="#robo29">config.php/Database_information</a></li>
+<li>5.3.   <a href="#robo30">config.php/Filenames</a></li>
+<li>5.4.   <a href="#robo31">config.php/Script_properties</a></li>
+
+<li id="title">Create tables</li>
+<li>6.   <a href="#robo5">Introduction/create_tables.php</a></li>
+<li>6.1.   <a href="#robo35">create_tables.php/Create_tables_in_db</a></li>
+<li>6.2.   <a href="#robo36">create_tables.php/Include_stuff</a></li>
+
+<li id="title">Drop tables</li>
+<li>7.   <a href="#robo6">Introduction/drop_tables.php</a></li>
+<li>7.1.   <a href="#robo48">drop_tables.php/Drop_tables</a></li>
+<li>7.2.   <a href="#robo49">drop_tables.php/Include_stuff</a></li>
+
+<li id="title">Start script</li>
+<li>8.   <a href="#robo7">Introduction/start_script.php</a></li>
+<li>8.1.   <a href="#robo58">start_script.php/Check_for_updates</a></li>
+<li>8.2.   <a href="#robo59">start_script.php/Common_calls</a></li>
+<li>8.3.   <a href="#robo60">start_script.php/Content_file</a></li>
+<li>8.3.1.   <a href="#robo32">Content_file/Clean_xml</a></li>
+<li>8.3.2.   <a href="#robo33">Content_file/Download</a></li>
+<li>8.3.3.   <a href="#robo34">Content_file/Parse_and_insert</a></li>
+<li>8.4.   <a href="#robo61">start_script.php/Include_stuff</a></li>
+<li>8.5.   <a href="#robo62">start_script.php/set_time_limit</a></li>
+<li>8.6.   <a href="#robo63">start_script.php/Structure_file</a></li>
+<li>8.6.1.   <a href="#robo64">Structure_file/Clean_xml</a></li>
+<li>8.6.2.   <a href="#robo65">Structure_file/Download</a></li>
+<li>8.6.3.   <a href="#robo66">Structure_file/Parse_and_insert</a></li>
+</ul>
+<br />
+<a name="robo_top_of_doc">Generated from ./../</a> with <a href="http://sourceforge.net/projects/robodoc/">ROBODoc</a> v4.0.25 on Mon May 24 04:13:06 2004
+<br />
+<a name="robo0">
+<a name="Introduction2fclass5fclean2ephp">
+<h1>1.  Introduction/class_clean.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>class_clean.php</strong> 
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      This file holds the <a href="#robo16">CleanXML</a> class, which is used
+      to clean up dirty ODP XML.       
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      6 dec.  2003: Fixed some things. Added more complex regex's.
+      12 feb. 2004: Fixed some "" things - changed them to ''
+      19 maj  2004: Rewritten all comments, so they support ROBODOC - kinky stuff :-D
+</pre></span><a name="robo16">
+<a name="class5fclean2ephp2fCleanXML">
+<h2>1.1.  class_clean.php/CleanXML  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo0">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This class main purpose is to clean dirty XML.
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>       _dirty_data:
+           @string - holds the "dirty" data
+       _clean_data:
+           @string - holds the clean data
+       write_fp:
+           @file_pointer - Used to open a fp to the write file
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>       <a href="#robo27">cleanFile</a>, <a href="#robo25">_correction</a>, <a href="#robo26">_writeTheCleanData</a>
+</pre></span><p><strong>EXTENDS</strong></p>
+<span class="EXTENDS"><pre>       <a href="#robo20">Dot</a>
+</pre></span><a name="robo25">
+<a name="CleanXML2f5fcorrection">
+<h3>1.1.1.  CleanXML/_correction  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo16">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Internal function that cleans the XML data.
+       It cleans the data for tags, and unsupported chars.
+       RegExp patterns:
+           '=&lt;[biu]&gt;(.*)&lt;/[biu]&gt;=i', '=&amp;(?!amp;)=i', '=&lt;strong&gt;(.*)&lt;/strong&gt;=i',
+           '=[\x00-\x08\x0b-\x0c\x0e-\x1f]=
+       Corrections
+           "$1", "&amp;amp;", "$1", '' 
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo27">cleanFile</a>
+</pre></span><a name="robo26">
+<a name="CleanXML2f5fwriteTheCleanData">
+<h3>1.1.2.  CleanXML/_writeTheCleanData  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo16">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This function writes our clean data to our write file pointer.
+       At last it resets the _clean_data.  
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo25">_correction</a>
+</pre></span><a name="robo27">
+<a name="CleanXML2fcleanFile">
+<h3>1.1.3.  CleanXML/cleanFile  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo16">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This is the functions that cleans the file. First it creates
+       2 file pointers. One FP to the read file and one FP
+       to the write file. Then it's just reads the read file until
+       EOF. While reading it inserst the dirty data in the <a href="#robo25">_correction</a>
+       function, in here the data is cleaned. When this process is finished
+       we have a new "clean" file called clean_$__filename. 
+       Then the script deletes the dirty file and renames the clean_$__filename
+       to just $__filename.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__filename (@string): 
+           The filename of the file we are about to clean  
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><p><strong>USES</strong></p>
+<span class="USES"><pre>       <a href="#robo25">_correction</a>, <a href="#robo26">_writeTheCleanData</a>
+</pre></span><a name="robo1">
+<a name="Introduction2fclass5fcommand2ephp">
+<h1>2.  Introduction/class_command.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>class_command.php</strong>   
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      This file holds some important classes. 
+      Includes following classes:
+      <a href="#robo19">Database</a>:
+          A class that is used to handle <a href="#robo19">Database</a> related stuff
+      <a href="#robo18">CheckURL</a>
+          A class that checks a give URL
+      <a href="#robo20">Dot</a>
+          A class that handles the <a href="#robo20">Dot</a> printing in command promt
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      6 dec.  2003: Just added the change log!
+      7 dec.  2003: Inserted the <a href="#robo20">Dot</a> class
+      12 feb. 2004: Fixed some "" things in variables.. with ''
+      19 maj  2004: Rewritten all comments, so they support ROBODOC - kinky stuff :-D
+</pre></span><a name="robo17">
+<a name="class5fcommand2ephp2fBasic">
+<h2>2.1.  class_command.php/Basic  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo1">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This holds the some <strong>Basic</strong> methods.. Like an <a href="#robo8">error</a> handler.
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo8">error</a>
+</pre></span><a name="robo8">
+<a name="Basic2ferror">
+<h3>2.1.1.  Basic/error  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo17">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This is our <strong>error</strong> handler. All <strong>error</strong> should be passed to this <strong>error</strong> handler!
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__error_type (@string):
+           Holds what kind of <strong>error</strong> it is. Can be Fatal <strong>error</strong> or just a Warning
+       $__error_message (@string):
+           Message that should be displayed.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo9">
+<a name="Basic2fprintToConsole">
+<h3>2.1.2.  Basic/printToConsole  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo17">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This is a method to print to our console. Alle informative information, 
+       should be posted to this method.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __text (@string):
+           Holds the text that is going to be displayed.
+       __line_wrap (@bol):
+           Default set to true (if it should wrap the text in \n)
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo18">
+<a name="class5fcommand2ephp2fCheckURL">
+<h2>2.2.  class_command.php/CheckURL  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo1">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This class can get information about an URL. This class has methods,
+      that <a href="#robo43">download</a> the headers of a given URL. Those headers are then parsed for
+      diffrent information that we need.
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      data (@string):
+          Header data that we get back from a server when we give it a URL
+      last_modified (@date):
+          A propertie that holds the date - when was the URL last modified
+      current_version (@date):
+          The current version of the OPD dump
+      content_lenght (@int):
+          The content lenght of a URL... aka File size
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo12">downloadHeaders</a>, <a href="#robo10">_urlParse</a>, <a href="#robo13">lastModified</a>, <a href="#robo11">contentLenght</a>, <a href="#robo14">lastModifiedCompare</a>
+</pre></span><a name="robo10">
+<a name="CheckURL2f5furlParse">
+<h3>2.2.1.  CheckURL/_urlParse  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Method that parts an URL
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__url (@string): 
+           The URL that you want to part
+       $__request ($string):
+           The request of the return value. IE: host or path
+ OUTPUT
+       @string - host or path
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private 
+</pre></span><a name="robo11">
+<a name="CheckURL2fcontentLenght">
+<h3>2.2.2.  CheckURL/contentLenght  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Method that extracts the file size from our header data (data propertie)    
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo12">
+<a name="CheckURL2fdownloadHeaders">
+<h3>2.2.3.  CheckURL/downloadHeaders  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Method that gets the headers from an URL - which is the input of this method.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__url (@string): 
+           The URL which we want to get headers from
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo13">
+<a name="CheckURL2flastModified">
+<h3>2.2.4.  CheckURL/lastModified  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Method that extracts the last-modified date from our header data (data propertie)   
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo14">
+<a name="CheckURL2flastModifiedCompare">
+<h3>2.2.5.  CheckURL/lastModifiedCompare  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that checks if the ODP data last-modified date matches the date found
+       inside lastupdate.data. If it's the same.. the script stops! If the ODP data
+       dump is fresh - then we proceed with our <a href="#robo43">download</a>.
+       If we proceed - - then our current last-modified date is stored in a file:
+       lastupdate.data 
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo15">
+<a name="CheckURL2fwriteLastUpdate">
+<h3>2.2.6.  CheckURL/writeLastUpdate  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo18">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       This just write the last update date to a file          
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo19">
+<a name="class5fcommand2ephp2fDatabase">
+<h2>2.3.  class_command.php/Database  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo1">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This class holds methods that handles <strong>Database</strong>
+      related stuff. I.e. <a href="#robo38">connect</a> to the <strong>Database</strong>, <a href="#robo37">close</a> connection
+      and queries.
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo38">connect</a>, <a href="#robo37">close</a>, sqlWithoutAnswer
+</pre></span><a name="robo37">
+<a name="Database2fclose">
+<h3>2.3.1.  Database/close  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo19">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A methods that closes the connection to the <a href="#robo19">Database</a>.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo38">
+<a name="Database2fconnect">
+<h3>2.3.2.  Database/connect  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo19">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that connects to the <a href="#robo19">Database</a>. This method
+       depends on <a href="#robo4">config.php</a> and the <a href="#robo19">Database</a> globals..
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo39">
+<a name="Database2fsqlWithoutAnser">
+<h3>2.3.3.  Database/sqlWithoutAnser  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo19">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A methods that does a MySQL query.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__query (@string):
+           A SQL query.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo20">
+<a name="class5fcommand2ephp2fDot">
+<h2>2.4.  class_command.php/Dot  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo1">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This class can be used to control when a <strong>Dot</strong> (.) is going to be printed.
+      I.e. it's not smart to print a <strong>Dot</strong> out for every row we insert in our db.
+      Then you will have like 2 mio dots :)
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Start to set the frequency (i.e. print the <strong>Dot</strong> every 50000 time). Then just call
+      <a href="#robo40">printDot</a>.. And the method will find out it should print the <strong>Dot</strong> or not.
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      count (@int):
+          Variable to control that the <strong>Dot</strong> does not print everytime.
+          I.e. it's just the counter that we used to check if we have reached
+          the frequency.
+      frequency (@int):
+          On what frequency should the <strong>Dot</strong> be displayed 
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo40">printDot</a>, <a href="#robo41">setFrequency</a>  
+</pre></span><a name="robo40">
+<a name="Dot2fprintDot">
+<h3>2.4.1.  Dot/printDot  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo20">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A methods that prints out the <a href="#robo20">Dot</a> if the counter has the same value
+       as the frequency. Every time this function is called the counter gets ++.   
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo41">
+<a name="Dot2fsetFrequency">
+<h3>2.4.2.  Dot/setFrequency  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo20">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A methods that set our frequency.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       $__freq (@int):
+           A number .. i.e. 50000 - print the <a href="#robo20">Dot</a> every 50000..    
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo2">
+<a name="Introduction2fclass5fdownload2ephp">
+<h1>3.  Introduction/class_download.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>class_download.php</strong>
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Start of to set the download_speed.
+      Next set the filename to <a href="#robo43">download</a>.
+      Next <a href="#robo42">delete</a> the old file by calling the method <a href="#robo42">delete</a>()
+      Next <a href="#robo47">setPath</a> (the patch of the file we wish to <a href="#robo43">download</a>).
+      Next call method <a href="#robo43">download</a>() to <a href="#robo43">download</a> it
+      Next call method <a href="#robo44">extract</a>() to <a href="#robo44">extract</a> it
+</pre></span><p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This files holds one class (DownloadFile). This class is used to
+      <a href="#robo43">download</a> and <a href="#robo44">extract</a> the DMOZ data dumps.
+      Lucky for us - they are packed with Gunzip - and PHP supports gunzip.. yay ;)
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      23 nov. 2003: Created the class
+      6  dec. 2003: Just added the change log!
+      7 dec.  2003: Added support for the class <a href="#robo18">CheckURL</a>
+      12 feb  2004: Remade the gunzip extracter. Now it rocks!
+                    Fixed some "" to ''.
+      19 maj  2004: Rewritten alle comments, so they support ROBODOC - kinky stuff :-D
+</pre></span><p><strong>USES</strong></p>
+<span class="USES"><pre>      <a href="#robo18">CheckURL</a>, <a href="#robo20">Dot</a>       
+</pre></span><a name="robo21">
+<a name="class5fdownload2ephp2fDownloadExtractFile">
+<h2>3.1.  class_download.php/DownloadExtractFile  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo2">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This class main purpose is to clean dirty XML.
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      filename (@string):
+          Filename of our file, that we want to make magic to.
+      path (@string):
+          The path of the file we are about to <a href="#robo43">download</a>
+      download_speed (@int):
+          The <a href="#robo43">download</a> speed (in KB)
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo47">setPath</a>, <a href="#robo45">setDownloadSpeed</a>, <a href="#robo42">delete</a>, <a href="#robo43">download</a>, <a href="#robo44">extract</a>.
+</pre></span><p><strong>EXTENDS</strong></p>
+<span class="EXTENDS"><pre>      <a href="#robo20">Dot</a>
+</pre></span><a name="robo42">
+<a name="DownloadExtractFile2fdelete">
+<h3>3.1.1.  DownloadExtractFile/delete  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       <strong>delete</strong> a the old file, if it's there.           
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo43">
+<a name="DownloadExtractFile2fdownload">
+<h3>3.1.2.  DownloadExtractFile/download  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       <strong>download</strong> our file
+</pre></span><p><strong>USES</strong></p>
+<span class="USES"><pre>       <a href="#robo18">CheckURL</a>, <a href="#robo20">Dot</a>   
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo44">
+<a name="DownloadExtractFile2fextract">
+<h3>3.1.3.  DownloadExtractFile/extract  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       <strong>extract</strong> the downloaded gunzip file.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo45">
+<a name="DownloadExtractFile2fsetDownloadSpeed">
+<h3>3.1.4.  DownloadExtractFile/setDownloadSpeed  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Set the <a href="#robo43">download</a> speed
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __speed (@int):
+           <a href="#robo43">download</a> speed (KB) 25 i.e. 25 KB/s
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo46">
+<a name="DownloadExtractFile2fsetFilename">
+<h3>3.1.5.  DownloadExtractFile/setFilename  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Set the <a href="#robo43">download</a> speed
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __filename (@string):
+           What should our file be named :)
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo47">
+<a name="DownloadExtractFile2fsetPath">
+<h3>3.1.6.  DownloadExtractFile/setPath  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo21">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Set path of the file we are about to <a href="#robo43">download</a>.  
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __path (@string):
+           An URL..
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo3">
+<a name="Introduction2fclass5fparse2ephp">
+<h1>4.  Introduction/class_parse.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>class_parse.php</strong>
+</pre></span><p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This file contains all the main classes that is used to parse the XML 
+      (rdf) files.
+      Classes included are following:
+           PraseXMLGlobal:
+              A parent class that has some classes, that can be used both by
+              structure and content parsing.
+          <a href="#robo23">ParseXMLStructure</a>:
+              A class that is used to parse the structure RDF file.
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      06 dec. 2003: Just added the change log! :)
+      07 dec. 2003: Added content parser
+      07 dec. 2003: Added a new class <a href="#robo24">XMLGlobal</a>!
+      07 dec. 2003: Fixed some bugs :D
+      12 feb. 2004: Fixed shit loads of "" code-not-so good errors
+                    Fixed a HUGE bug (which took long time to find).
+                    the bug made catid's to 0 - but it's fixed now!
+      13 feb. 2004: To work properly the class needs to load whole files
+                    into the memory. To help your computer I have now created
+                    class that splits the big file into some smaller parts.
+      18 feb. 2004: Fixed a bug in the split rutine (it didn't split the
+                    content file :()
+      13 maj 2004: Rewritten alle comments, so they support ROBODOC - kinky stuff :-D
+</pre></span><a name="robo22">
+<a name="class5fparse2ephp2fParseXMLContent">
+<h2>4.1.  class_parse.php/ParseXMLContent  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo3">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      A class that is used to parse the XML content file.
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Call <a href="#robo71">setStartTime</a> - sets the start timem
+      Call <a href="#robo72">setXMLFile</a>(filename) - set the filename of our XML file
+      Call <a href="#robo53">startParse</a> - starts parsing the document and inserting the data in our
+      MySQL <a href="#robo19">Database</a>.      
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      The <a href="#robo17">Basic</a> properties to get this class going:
+      count_rows (@int):
+          How many rows we have done so far
+      count_rows_temp (@int):
+          A temporary counter (--Reset after ECHO_STATS_FREQUNCY rows)
+      XML tags and tehir contents
+      current_tag (@string):
+          Hold what tag we currently are in
+      permitted_tags (@array)
+          An array that holds the permitted tags
+      
+      Properties for the XML structure:
+      -------
+      CONTENT LINKS (content_links):
+      topic (@string)
+      type (@string)
+      resource (@string)
+      catid (@int)
+      
+      CONTENT DESCRIPTION (content_description):
+      external_page (@string)
+      title (@string)
+      description (@string)
+      ages (@string)
+      mediadate (@date)
+      priority (@int)
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo53">startParse</a>, <a href="#robo52">_startTagProcessor</a>, <a href="#robo55">_endTagProcessor</a>, <a href="#robo50">_charDataProcessor</a>
+</pre></span><a name="robo50">
+<a name="ParseXMLContent2f5fcharDataProcessor">
+<h3>4.1.1.  ParseXMLContent/_charDataProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo22">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       This is our content processor
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __data (@string)
+           The data dude.. the data :)
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo51">
+<a name="ParseXMLContent2f5fendTagProcessor">
+<h3>4.1.2.  ParseXMLContent/_endTagProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo22">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       This is our end tag processor. When a tag ends, it's gets In hEEreeE
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __tag_name (@string)
+           The name of the current tagname
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo52">
+<a name="ParseXMLContent2f5fstartTagProcessor">
+<h3>4.1.3.  ParseXMLContent/_startTagProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo22">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       Function that processes the start tags.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __tag_name (@string)
+           The name of the current tagname
+       __attributes (@array)
+           Attributes of the tagname
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo53">
+<a name="ParseXMLContent2fstartParse">
+<h3>4.1.4.  ParseXMLContent/startParse  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo22">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       Used to start parsing of our file.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo23">
+<a name="class5fparse2ephp2fParseXMLStructure">
+<h2>4.2.  class_parse.php/ParseXMLStructure  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo3">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      A class that is used to parse the XML structure file.
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Call <a href="#robo71">setStartTime</a> - sets the start timem
+      Call <a href="#robo72">setXMLFile</a>(filename) - set the filename of our XML file
+      Call <a href="#robo53">startParse</a> - starts parsing the document and inserting the data in our
+      MySQL <a href="#robo19">Database</a>.      
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      The <a href="#robo17">Basic</a> properties to get this class going:
+      count_rows (@int):
+          How many rows we have done so far
+      count_rows_temp (@int):
+          A temporary counter (--Reset after ECHO_STATS_FREQUNCY rows)
+      XML tags and tehir contents
+      current_tag (@string):
+          Hold what tag we currently are in
+      permitted_tags (@array)
+          An array that holds the permitted tags
+      
+      Properties for the XML structure:
+      topic (@string)
+      catid (@int)
+      title (@string)
+      description (@string)
+      last_update (@date)
+      
+      Variables for the XML data type
+      type
+      resource
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo53">startParse</a>, <a href="#robo52">_startTagProcessor</a>, <a href="#robo55">_endTagProcessor</a>, <a href="#robo50">_charDataProcessor</a>
+</pre></span><a name="robo54">
+<a name="ParseXMLStructure2f5fcharDataProcessor">
+<h3>4.2.1.  ParseXMLStructure/_charDataProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo23">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       This is our content processor
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __data (@string)
+           The data dude.. the data :)
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo55">
+<a name="ParseXMLStructure2f5fendTagProcessor">
+<h3>4.2.2.  ParseXMLStructure/_endTagProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo23">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       This is our end tag processor. When a tag ends, it's gets In hEEreeE
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __tag_name (@string)
+           The name of the current tagname
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo56">
+<a name="ParseXMLStructure2f5fstartTagProcessor">
+<h3>4.2.3.  ParseXMLStructure/_startTagProcessor  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo23">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       Function that processes the start tags.
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __parser (@obj)
+           What parser is it dude? heh
+       __tag_name (@string)
+           The name of the current tagname
+       __attributes (@array)
+           Attributes of the tagname
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo57">
+<a name="ParseXMLStructure2fstartParse">
+<h3>4.2.4.  ParseXMLStructure/startParse  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo23">parent</a>]</p>
+<p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>       Used to start parsing of our file.
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo24">
+<a name="class5fparse2ephp2fXMLGlobal">
+<h2>4.3.  class_parse.php/XMLGlobal  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo3">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This class holds global methods that can be used by structre and contents
+      parsers.
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      This class is used as a parent for XMLParseStructure and XMLParseContent         
+</pre></span><p><strong>PROPERTIES</strong></p>
+<span class="PROPERTIES"><pre>      Status:
+      h (@int):
+          Hours
+      m (@int):
+          Minutes
+      s (@int)
+          Sec.
+      
+      Everythings else:
+      xml_file (@string):
+          The filename of XML file we are parsing
+      start_time (@int):
+          The start time
+</pre></span><p><strong>METHODS</strong></p>
+<span class="METHODS"><pre>      <a href="#robo72">setXMLFile</a>, <a href="#robo71">setStartTime</a>, <a href="#robo68">_getMicroTime</a>, <a href="#robo67">_echoStatus</a>, <a href="#robo69">_splitTime</a>, <a href="#robo70">_startToParse</a>
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>      XMLParseStructure, XMLParseContent
+</pre></span><a name="robo67">
+<a name="XMLGlobal2f5fechoStatus">
+<h3>4.3.1.  XMLGlobal/_echoStatus  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A methods that prints out the status
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __start_time (@int):
+           When was the script started
+       __count_rows (@int):
+           How many rows have we inserted sofar
+       __milestone (@string):
+           A text that tells a litte about our milestone
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo55">_endTagProcessor</a>
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo68">
+<a name="XMLGlobal2f5fgetMicroTime">
+<h3>4.3.2.  XMLGlobal/_getMicroTime  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that gets the microtime
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo71">setStartTime</a>, echoStatus    
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo69">
+<a name="XMLGlobal2f5fsplitTime">
+<h3>4.3.3.  XMLGlobal/_splitTime  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that splits current run time for the script
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo67">_echoStatus</a> 
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo70">
+<a name="XMLGlobal2f5fstartToParse">
+<h3>4.3.4.  XMLGlobal/_startToParse  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that creates the PHP's parsers and starts parsing.
+</pre></span><p><strong>USED BY</strong></p>
+<span class="USED_BY"><pre>       <a href="#robo53">startParse</a> (XMLContentParser and XMLStructureParser)
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Private
+</pre></span><a name="robo71">
+<a name="XMLGlobal2fsetStartTime">
+<h3>4.3.5.  XMLGlobal/setStartTime  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       A method that you need to call to set the start time        
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo72">
+<a name="XMLGlobal2fsetXMLFile">
+<h3>4.3.6.  XMLGlobal/setXMLFile  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo24">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Just a methods that sets the filename
+</pre></span><p><strong>INPUT</strong></p>
+<span class="INPUT"><pre>       __filename (@string):
+           The filename of our XML file
+</pre></span><p><strong>ACCESS</strong></p>
+<span class="ACCESS"><pre>       Public
+</pre></span><a name="robo4">
+<a name="Introduction2fconfig2ephp">
+<h1>5.  Introduction/config.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>config.php</strong>  
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      In this file you have several options available - - to
+      custimize the script for your use. *         
+</pre></span><p><strong>TYPE</strong></p>
+<span class="TYPE"><pre>      Just a file that contains some important information
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      3 dec. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      12 feb. 2004: Added some features
+      19 maj  2004: Rewritten alle comments, so they support ROBODOC - kinky stuff :-D 
+      24 maj 2004: Added console color (CONSOLE_COLOR) option
+</pre></span><a name="robo28">
+<a name="config2ephp2fCommon5fglobal5fvalues">
+<h2>5.1.  config.php/Common_global_values  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo4">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Here you specify common global value:
+           ECHO_STATS (@bol):
+               If ECHO_STATS is true -  statistics will be displayed 
+               (stats are used when parsing the RDF documents).
+           ECHO_STATS_FREQUNCY (@int):
+               A value that contains what frequncy the stats should be displayed.
+           DOWNLOAD_SPEED (@int): 
+               <a href="#robo43">download</a> speed. in kilobyte
+           CONSOLE_COLOR (@string):
+               Define what color you want to use. You can set it to:
+               black, red, green and blue
+</pre></span><a name="robo29">
+<a name="config2ephp2fDatabase5finformation">
+<h2>5.2.  config.php/Database_information  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo4">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Here you specify your <a href="#robo19">Database</a> information:
+           DB_SERVER (@string):
+               The server address - could be localhost or a URL
+           DB_USER (@string):
+               <a href="#robo19">Database</a> username
+           DB_PASSWORD (@string): 
+               Password for your <a href="#robo19">Database</a>
+           DB_<a href="#robo19">Database</a> (@string):
+               The <a href="#robo19">Database</a> your create with <a href="#robo5">create_tables.php</a>
+</pre></span><a name="robo30">
+<a name="config2ephp2fFilenames">
+<h2>5.3.  config.php/Filenames  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo4">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Here you specify common global value:
+           $rdffile_structure (@string):
+               Structure RDF filename 
+           $rdffile_content (@string):
+               Content RDF filename
+ WARNING
+       No need to edit those <strong>Filenames</strong>!
+</pre></span><a name="robo31">
+<a name="config2ephp2fScript5fproperties">
+<h2>5.4.  config.php/Script_properties  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo4">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       In this script you specify what the script shell do:
+           <a href="#robo58">Check_for_updates</a> (@bool):
+               If it's set to true, then the script will check for updated DMOZ dumps.
+           STRUCTURE_DOWNLOAD_AND_<a href="#robo44">extract</a> (@bool):
+               If it's set to true, then the script will <a href="#robo43">download</a> and <a href="#robo44">extract</a>
+               the structure DMOZ dump.
+           STRUCTURE_CLEAN (@bool): 
+               If it's set to true, then the script will clean the structure file.
+           STRUCTURE_PARSE_N_INSERT (@bool):
+               If it's set to true, then the script will parse the structure rdf file 
+               and insert data into the MySQL db.
+           CONTENT_DOWNLOAD_AND_<a href="#robo44">extract</a> (@bool):
+               If it's set to true, then the script will <a href="#robo43">download</a> 
+               and <a href="#robo44">extract</a> the content DMOZ dump.
+           CONTENT_CLEAN (@bool): 
+               If it's set to true, then the script will clean the content file.
+           CONTENT_PARSE_N_INSERT (@bool):
+               If it's set to true, then the script will parse the content rdf file and
+               insert data into the MySQL db.
+</pre></span><a name="robo5">
+<a name="Introduction2fcreate5ftables2ephp">
+<h1>6.  Introduction/create_tables.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>create_tables.php</strong>
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Just call this script to create the needed tables in your <a href="#robo19">Database</a>       
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      6 dec.  2003: Fixed some things. Added more complex regex's.
+      12 feb. 2004: Fixed some "" things - changed them to ''
+      19 maj  2004: Rewritten all comments, so they support ROBODOC - kinky stuff :-D
+</pre></span><a name="robo35">
+<a name="create5ftables2ephp2fCreate5ftables5fin5fdb">
+<h2>6.1.  create_tables.php/Create_tables_in_db  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo5">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Creates the tables in our <a href="#robo19">Database</a>.
+</pre></span><a name="robo36">
+<a name="create5ftables2ephp2fInclude5fstuff">
+<h2>6.2.  create_tables.php/Include_stuff  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo5">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Include classes and the config file.
+</pre></span><a name="robo6">
+<a name="Introduction2fdrop5ftables2ephp">
+<h1>7.  Introduction/drop_tables.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>drop_tables.php</strong>
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      Just call this script to <a href="#robo42">delete</a> the created tables.
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      23 nov. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      12 feb. 2004: Fixed some "" things - changed them to ''
+</pre></span><a name="robo48">
+<a name="drop5ftables2ephp2fDrop5ftables">
+<h2>7.1.  drop_tables.php/Drop_tables  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo6">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Drop the tables in the <a href="#robo19">Database</a>
+</pre></span><a name="robo49">
+<a name="drop5ftables2ephp2fInclude5fstuff">
+<h2>7.2.  drop_tables.php/Include_stuff  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo6">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Include classes and the config file.
+</pre></span><a name="robo7">
+<a name="Introduction2fstart5fscript2ephp">
+<h1>8.  Introduction/start_script.php  </h1>
+<p>[<a href="#robo_top_of_doc">top</a>]</p>
+<p><strong>NAME</strong></p>
+<span class="NAME"><pre>      <strong>start_script.php</strong>
+</pre></span><p><strong>USAGE</strong></p>
+<span class="USAGE"><pre>      First be sure you have configured this script (see <a href="#robo4">config.php</a>).
+      Then run this script from promt. Change the directory with cd to
+      the place where your <strong>start_script.php</strong> is located. 
+      And then type this:
+          UNIX:
+              You probably have a symbolic link, if not search google:
+              php <strong>start_script.php</strong>
+          Windows:
+              Locate where you php.exe is. If it is C:\php\php.exe
+              then do following:
+              C:\php\php.exe <strong>start_script.php</strong>         
+</pre></span><p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This scripts initializes all the classes and runs the script.
+      Best way to configure this script is by <a href="#robo4">config.php</a>. But you may
+      also wish to edit it in here. This script is well documented, 
+      it should not be that hard.
+</pre></span><p><strong>TYPE</strong></p>
+<span class="TYPE"><pre>      A script used to create classes.
+</pre></span><p><strong>CREATION DATE</strong></p>
+<span class="CREATION_DATE"><pre>      8 dec. 2003
+</pre></span><p><strong>HISTORY</strong></p>
+<span class="HISTORY"><pre>      12 feb. 2004: Remade it. You now control this script from <a href="#robo4">config.php</a>!
+      13 feb. 2004: Added class_split.php
+      15 maj  2004: Remove class_split.php - New XML parser no need for it :-)
+      19 maj  2004: Rewritten alle comments, so they support ROBODOC - kinky stuff :-D 
+      24 maj  2004: Well lot's of improvements.. it's sick ;)
+</pre></span><p><strong>USES</strong></p>
+<span class="USES"><pre>      All classes
+</pre></span><a name="robo58">
+<a name="start5fscript2ephp2fCheck5ffor5fupdates">
+<h2>8.1.  start_script.php/Check_for_updates  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      This section <a href="#robo43">download</a> the headers for the structure file. 
+      Then it checks when the file was last modified.
+      at last it compares it with the users last update.
+</pre></span><a name="robo59">
+<a name="start5fscript2ephp2fCommon5fcalls">
+<h2>8.2.  start_script.php/Common_calls  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Common calls: <a href="#robo38">connect</a> to the <a href="#robo19">Database</a>
+      Create the objects:
+          check_url (checks a specific URL)
+          downloadfile (downloads files)
+          <a href="#robo64">Clean_xml</a> (cleans the XML files)
+          parse_xml_structure
+          parse_xml_content
+</pre></span><a name="robo60">
+<a name="start5fscript2ephp2fContent5ffile">
+<h2>8.3.  start_script.php/Content_file  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>SECTION</strong></p>
+<span class="SECTION"><pre>      Calls that handle the DMOZ content file 
+</pre></span><a name="robo32">
+<a name="Content5ffile2fClean5fxml">
+<h3>8.3.1.  Content_file/Clean_xml  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo60">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Clean the content file! (dirty xml - we don't like it :D)  
+</pre></span><a name="robo33">
+<a name="Content5ffile2fDownload">
+<h3>8.3.2.  Content_file/Download  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo60">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       <a href="#robo43">download</a> the content file  
+</pre></span><a name="robo34">
+<a name="Content5ffile2fParse5fand5finsert">
+<h3>8.3.3.  Content_file/Parse_and_insert  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo60">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>       Parse and insert the content RDF file into a <a href="#robo19">Database</a>  
+</pre></span><a name="robo61">
+<a name="start5fscript2ephp2fInclude5fstuff">
+<h2>8.4.  start_script.php/Include_stuff  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Include classes and the config file.
+</pre></span><a name="robo62">
+<a name="start5fscript2ephp2fset5ftime5flimit">
+<h2>8.5.  start_script.php/set_time_limit  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Set maximum execution time to none
+</pre></span><a name="robo63">
+<a name="start5fscript2ephp2fStructure5ffile">
+<h2>8.6.  start_script.php/Structure_file  </h2>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo7">parent</a>]</p>
+<p><strong>SECTION</strong></p>
+<span class="SECTION"><pre>      Calls that handle the DMOZ structure file   
+</pre></span><a name="robo64">
+<a name="Structure5ffile2fClean5fxml">
+<h3>8.6.1.  Structure_file/Clean_xml  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo63">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Clean the structure file! (dirty xml - we don't like it :D) 
+</pre></span><a name="robo65">
+<a name="Structure5ffile2fDownload">
+<h3>8.6.2.  Structure_file/Download  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo63">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      <a href="#robo43">download</a> the structure file 
+</pre></span><a name="robo66">
+<a name="Structure5ffile2fParse5fand5finsert">
+<h3>8.6.3.  Structure_file/Parse_and_insert  </h3>
+<p>[<a href="#robo_top_of_doc">top</a>][<a href="#robo63">parent</a>]</p>
+<p><strong>FUNCTION</strong></p>
+<span class="FUNCTION"><pre>      Parse and insert the structure RDF file into a <a href="#robo19">Database</a> 
+</pre></span></body>
+</html>

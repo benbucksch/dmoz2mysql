@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel="stylesheet" href="documentation/sourceDoc.css" type="text/css">
+<title>DMOZ to MySQL using PHP</title>
+</head>
+<body>
+
+<h3>Script information</h3>
+<b>Name:</b> PHP DMOZ parser (dmoz2mysql) <br />
+<b>Current version:</b> 3.0 (24. Maj 2004) <br />
+<b>License type:</b> The GPL <br />
+<b>Script website:</b> <a href="http://amix.dk/codecrib/dmozparser.php" traget="_blank">http://amix.dk/codecrib/</a><br />
+<b>Author:</b> Amir Salihefendic (<a href="mailto:amix@amix.dk">amix@amix.dk</a>)<br />
+<b>Copyright:</b> JFL Webcom (<a href="http://www.webcom.dk" target="_blank">http://www.webcom.dk</a> <br />
+<b>SourceForge project page:</b> <a href="https://sourceforge.net/projects/dmoz2mysql/" target="_blank">https://sourceforge.net/projects/dmoz2mysql/</a>
+
+<h3>New things/improvements in this version 3.0</h3>
+Well, well! I have worked all night to make this version :-) And I am impressed with the result. Version 3 kicks ass.
+
+<pre>Tha new things</pre>
+<ul>
+	<li>Support for both PHP 4.3.x and PHP 5.0!</li>
+	<li>Improved XML parser</li>
+	<li>New comments! Just take a look at the code.. WOW ;-)</li>
+	<li>New names for classes, methods and properties.</li>
+	<li>Output in <font color="green">colors</font> - how cool is that!</li>
+	<li>Source code documentation can be found under /documentation.</li>
+	<li>Various bugs fixed</li>
+</ul>
+
+<h3 align="center">PHP DMOZ parser (RDF->MySQL DB) - Read me first</h3>
+<pre>What can this script do? What is it?</pre>
+This is a PHP script that is used to parse the DMOZ RDF data dump files. For more information about these files visit <a href="http://rdf.dmoz.org/" target="_blank">http://rdf.dmoz.org/</a>.
+<p>
+Current features of this script include:
+<ul>
+	<li>Downloading the files. Currently they are 50 MB for the content file and 250 MB for the structure file.</li>
+
+	<li>Extracting the files. The files are packed with gunzip, this script will pack those files out. 0.5GB for structure and 1.5GB for the content</li>
+
+	<li>Cleaning the files. The script cleans the files for dirty XML.</li>
+
+	<li>And of course: Parsing the files and inserting the content into a MySQL database.</li>
+</ul>
+</p>
+
+The speed of the parsing depends on your computer. I have an Athlon TB 1 GHZ and it takes me ~ 25 min. to extract, clean and parse the structure RDF file.
+
+<h3>REQUIREMENTS</h3>
+<ul>
+	<li>A working version of PHP (PHP 4.3.x or 5.0)</li>
+	<li>PHP must have support for XML parsing and GunZipping - it's normal features. If you don't have it, download a version of PHP that has it.</li>
+	<li>A working version of MySQL</li>
+	<li>3 GB free-space on your server - the files are large!</li>
+	<li>Some memory (256MB+)</li>
+</ul>
+
+<h3>How to start the script?</h3>
+<pre>Step 1</pre>
+Open config.php and edit it.
+
+<pre>Step 2</pre>
+Run create_tables.php to create the tables in your database.
+
+<pre>Step 3</pre>
+Run start_script.php from the prompt (i.e. php start_script.php)
+
+<p>
+Abracadabra, the script handles the dirty work for you :) Just lay back and relax - and smoke a joint (nah bad idea hehe).
+</p>
+
+<pre>Additional</pre>
+Run drop_tables.php to delete the tables in your database.
+
+<h3>Bye Bye</h3>
+<p>
+Cheers,<br />
+Amir Salihefendic, <a href="mailto:amix@amix.dk">amix@amix.dk</a>
+</p>
+<p>
+PS: If you have some troubles or find some bugs - - - post them on <a href="https://sourceforge.net/projects/dmoz2mysql/" traget="_blank">https://sourceforge.net/projects/dmoz2mysql/</a>
+</p>
+THANKS!
+
+<h3>Changelog</h3>
+<pre>17. dec. 2003</pre>
+set_time_limit(0); that sets maximum execution time to none
+
+<pre>2. feb. 2004</pre>
+Fixed a MAJOR bug (a catid bug that gave almost all catid 0!). A big thanks goes to Murray Woodman and Tony Spencer for reporting this bug.Moved the querys for creating tables out of start_script.php (too many people had problems with them)! To create your tables you need to run create_tables.php.
+
+<pre>12. feb. 2004</pre>
+This is a major update :) It fixes some very, very nasty bugs. It adds some new features - plus some little tweaks here and there!
+
+<p>
+Fixed some MAJOR bugs (bugs that made catid's turn to 0!) I have updated the code to extract the DMOZ data dump files - some users had problems, and now I have updated the code. I have tested it on Windows and Mac OS X and it worked fine.
+</p>
+
+<p>
+A new features is that you control the script from config.php.
+</p>
+
+<p>
+Well, have fun :) I hope the script works fine! PS: I have updated all "" with '' (where I could) - I really don't hope it gives some problems, if you find an error, then email amix@amix.dk.
+</p>
+
+<pre>13. feb. 2004</pre>
+Again a major update :) I haven't realesed version 2.0 since it had some problems. It didn't work since it should use LOT's of memory! Now I have fixed that error by making a new class that splits the RDF file into small files (25 MB). This makes it easy to load them into the memory - and now the script works WITHOUT any bugs ;-) [I have tested it for hours now ehehe].
+
+<pre>18. feb. 2004</pre>
+Fixe a little bug in class_parse.php that didn't split the content file.
+
+</body>
+</html>
