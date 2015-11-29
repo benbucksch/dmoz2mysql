@@ -51,8 +51,8 @@ rdf.dmoz.org download files:
 * 331M  total
 
 extracted:
-* 886M  structure.rdf
-* 1.7G  content.rdf.u8.gz
+* 886M  structure.rdf.u8
+* 1.7G  content.rdf.u8
 * 2.5G  total
 
 converter output:

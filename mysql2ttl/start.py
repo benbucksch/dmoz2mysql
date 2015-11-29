@@ -48,7 +48,7 @@ def escape(text):
 PREAMBLE = """
 @prefix dmoz: <http://dmoz.org/rdf/> .
 @prefix dmozcat: <http://dmoz.org/rdf/cat/> .
-@prefix dc: <http://purl.org/dc/elements/1.0/> .
+@prefix dc: <http://purl.org/dc/terms/> .
 
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -61,6 +61,10 @@ dmoz:narrow owl:equivalentProperty skos:narrower .
 db = mysql.connector.connect(**dbConfig)
 query = db.cursor()
 
+#Fix wrong names
+query.execute("UPDATE structure SET name='Root' WHERE catid = 1;")
+query.execute("UPDATE structure SET name='Top' WHERE catid = 2;")
+
 file = gzip.open("categories.ttl.gz", "wt")
 file.write(PREAMBLE)
 
@@ -72,7 +76,7 @@ for (name, catid, title, description) in query:
     title = "Root"
   if (isAlphabethical(name)): # Avoid to output /B categories at all
     continue
-  file.write((u'dmozcat:%s\n  dmoz:catid %d ;\n  dc:Subject "%s" ;\n  dc:Description "%s" .\n'
+  file.write((u'dmozcat:%s\n  dmoz:catid %d ;\n  dc:subject "%s" ;\n  dc:description "%s" .\n'
       % (convertCatName(name), catid, escape(title).replace("_", " "), convertDescription(description))).encode("utf8"))
 
 file.close()
@@ -116,7 +120,7 @@ print "Converting link titles"
 query.execute("SELECT externalpage, title, description FROM content_description")
 for (externalpage, title, description) in query:
   hostname = urlparse(externalpage).hostname.replace("www.", "")
-  file.write((u'<%s>\n  dmoz:domain "%s";\n  dc:Title "%s";\n  dc:Description "%s" .\n'
+  file.write((u'<%s>\n  dmoz:domain "%s";\n  dc:title "%s";\n  dc:description "%s" .\n'
       % (externalpage, hostname, escape(title), escape(description))).encode("utf8"))
 
 file.close()
