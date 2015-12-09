@@ -171,7 +171,7 @@ class XMLGlobal
 	{
 		//Load php's XML parser
 		$this->xml_parser = xml_parser_create();
-		xml_set_object($this->xml_parser, &$this);
+		xml_set_object($this->xml_parser, $this);
 		
 		//Parser option: Skip whitespace
 		xml_parser_set_option($this->xml_parser, XML_OPTION_SKIP_WHITE, true); 
